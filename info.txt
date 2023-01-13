@@ -1,0 +1,24 @@
+npx create-react-app react_crm
+npx create-react-app ./ --template typescript
+
+npm outdated /* ellenőrzi a frissítéseket */
+
+npm i axios
+npm i antd
+npm i typeface-montserrat
+npm i typeface-lato
+npm i styled-components
+npm i echarts
+npm i react-i18next
+npm i react-router-dom
+npm i @reduxjs/toolkit
+npm i @ant-design/icons
+npm i react-dom
+
+npm i react-helmet
+npm i --save-dev @types/react-helmet
+
+npm i days
+npm i rc-field-form
+
+npm install react-dom @reduxjs/toolkit antd antd-mask-input styled-components @ant-design/icons i18next axios axios-mock-adapter react-router-dom react-i18next react-redux echarts typeface-montserrat typeface-lato react-responsive react-helmet react-country-flag country-list react-phone-number-input slick-carousel react-slick echarts-for-react react-infinite-scroll-component react-router-hash-link react-insta-stories dotenv install leaflet react-leaflet geojson react-trello react-verification-input
