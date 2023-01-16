@@ -33,8 +33,8 @@ export const sidebarNavigation = [
         icon: <DashboardOutlined />,
     },
     {
-        title: 'modals',
-        key: 'modals',
+        title: 'Felugró ablakok',
+        key: 'modal',
         url: '/modals',
         icon: <FormOutlined />
     }

@@ -1,9 +1,36 @@
-import { Button, Space } from "antd";
-import { notificationController } from "controllers/notificationController";
+//import { useEffect } from "react";
+//import { Button, Space } from "antd";
+//import { notificationController } from "controllers/notificationController";
+import { faker } from '@faker-js/faker';
 
+const companies = [];
+
+/**
+ * Cég adatok összeállítása
+ */
+//for(let i = 0; i < 46; i++){
+//    companies.push({
+//        id: i,
+//        name: `Compnay ${i}`
+//    });
+//}
+
+for( let i = 0; i < 46; i++ ){
+    companies.push({
+        id: faker.datatype.uuid(),
+        name: faker.company.name(),
+    });
+}
+
+/**
+ * Cég adatok lekérése
+ * @param {object} pagination 
+ * @returns 
+ */
 export const getCompanyTableData = (pagination) => {
     return new Promise((res) => {
         setTimeout(() => {
+            /*
             const data = [];
             for(let i = 0; i < 46; i++){
                 data.push({
@@ -11,49 +38,24 @@ export const getCompanyTableData = (pagination) => {
                     name: `Compnay ${i}`
                 });
             }
-
+            */
             res({
-                data: data, 
-                pagination: {...pagination, total: data.length}
+                data: companies, 
+                pagination: {...pagination, total: companies.length}
             });
         }, 1000);
     });
 };
 
-export const getColumns = () => {
-    return [
-        {
-            title: 'id',
-            dataIndex: 'id'
-        },
-        {
-            title: 'name',
-            dataIndex: 'name'
-        },
-        {
-            title: 'Actions',
-            dataIndex: 'actions',
-            width: '15%',
-            render: (text, record) => {
-                return (
-                    <Space>
-                        <Button
-                            type="primary"
-                            onClick={() => {
-                                notificationController.info({ message: 'INVITE' });
-                            }}
-                        >
-                            {'edit'}
-                        </Button>
-                        <Button 
-                            type="primary" danger 
-                            onClick={() => handleDeleteRow(record.key)}
-                        >
-                            {'delete'}
-                        </Button>
-                    </Space>
-                );
-            }
-        }
-    ];
+/**
+ * Cég lekérése azonosító alapján
+ * @param {int} id 
+ * @returns 
+ */
+export const getCompany = (id) => {
+    let company = companies.find((element) => {
+        return element.id === id;
+    });
+
+    return company;
 };
